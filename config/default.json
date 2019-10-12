@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://jason-s:jason-s@better-together-mxey2.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://jason-s:jason-s@better-together-mxey2.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
 }
