@@ -1,3 +1,4 @@
+//Import
 const express = require('express');
 const router = express.Router();
 const gravatar = require('gravatar');
@@ -6,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 
+//Relative Import
 const User = require('../../models/User');
 
 //POST api/users
