@@ -1,5 +1,7 @@
+//Import
 const mongoose = require('mongoose');
 
+//Setup components of user
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,

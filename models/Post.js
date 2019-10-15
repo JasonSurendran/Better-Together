@@ -1,6 +1,8 @@
+//Imports
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//Setup components of a post
 const PostSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -16,6 +18,8 @@ const PostSchema = new Schema({
   avatar: {
     type: String
   },
+
+  //Add number of likes the post gets
   likes: [
     {
       user: {
@@ -24,6 +28,8 @@ const PostSchema = new Schema({
       }
     }
   ],
+
+  //Add number of comments
   comments: [
     {
       user: {
@@ -46,6 +52,8 @@ const PostSchema = new Schema({
       }
     }
   ],
+
+  //Add the date of the post
   date: {
     type: Date,
     default: Date.now
