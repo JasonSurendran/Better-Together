@@ -6,7 +6,7 @@ const app = express();
 //Connect Database
 connectDB();
 
-//Initialize Middleware
+//Initialize Auth
 app.use(express.json({ extended: false}));
 app.get('/', (req,res) => res.send('API Running'));
 

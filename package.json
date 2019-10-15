@@ -2,10 +2,10 @@
   "name": "better-together",
   "version": "1.0.0",
   "description": "Community Connecter",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server"
+    "start": "node app",
+    "app": "nodemon app"
   },
   "repository": {
     "type": "git",

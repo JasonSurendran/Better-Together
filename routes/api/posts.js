@@ -4,7 +4,7 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 //Relative Imports
-const auth = require('../../middleware/auth');
+const auth = require('../../auth/auth');
 const Post = require('../../models/Post');
 const User = require('../../models/User');
 

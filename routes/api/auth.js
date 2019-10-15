@@ -7,7 +7,7 @@ const config = require('config');
 const { check,validationResult } = require('express-validator');
 
 //Relative Imports
-const auth = require('../../middleware/auth')
+const auth = require('../../auth/auth')
 const User = require('../../models/User');
 
 //GET api/auth
