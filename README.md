@@ -1,5 +1,5 @@
 # Better-Together
 
-- Connects the elderly members of the community in order to encourage doing activities together
-- Currently building the back-end of the project using NodeJS, Express, and MongoDB
-- React & Redux is being utilized to develop the front-end
+- Connects the elderly members of the community in order to encourage them to do activities together
+- Developed the back-end RESTful API of the project using NodeJS, Express, and MongoDB
+- Currently building the front-end using React & Redux

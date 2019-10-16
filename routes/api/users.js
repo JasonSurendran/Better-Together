@@ -15,6 +15,7 @@ const User = require('../../models/User');
 router.post(
   '/',
   [
+    //Ensure name,email and password are all valid
     check('name', 'Name is required')
       .not()
       .isEmpty(),
@@ -33,6 +34,7 @@ router.post(
     const { name, email, password } = req.body;
 
     try {
+      //Check if email is already registered
       let user = await User.findOne({ email });
 
       if (user) {
@@ -54,10 +56,9 @@ router.post(
         password
       });
 
+      //Encrypt user passowrd
       const salt = await bcrypt.genSalt(10);
-
       user.password = await bcrypt.hash(password, salt);
-
       await user.save();
 
       const userid = {
@@ -66,6 +67,7 @@ router.post(
         }
       };
 
+      //Create web token for user
       jwt.sign(
         userid,
         config.get('jwtSecret'),
