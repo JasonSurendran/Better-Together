@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "app": "nodemon app"
+    "app": "nodemon app",
+    "react_app": "npm start --prefix react_app",
+    "concurrent": "concurrently \"npm run app\" \"npm run react_app\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.2.3",
+    "create-react-app": "^3.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
     "gravatar": "^1.8.0",
