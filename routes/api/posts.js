@@ -130,7 +130,7 @@ router.put('/like/:id', auth, async (req, res) => {
 });
 
 //PUT api/posts/unlike/:id
-//Like a post
+//Unlike a post
 router.put('/unlike/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
