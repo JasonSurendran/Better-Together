@@ -1,7 +1,10 @@
+//Imports
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+//Function to display the navbar
 const Navbar = () => {
+  //Return the navbar elements
     return (
         <nav className="navbar bg-dark">
       <h1>
