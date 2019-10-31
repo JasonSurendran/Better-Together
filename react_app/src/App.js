@@ -1,3 +1,4 @@
+//Imports
 import React, {Fragment} from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/layout/Navbar';
@@ -5,8 +6,13 @@ import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './store';
 
+//Main app component
+//Main function to setup routes and import all other components 
 const App = () => (
+  <Provider store ={store}>
   <Router>
     <Fragment>
       <Navbar />
@@ -19,6 +25,7 @@ const App = () => (
       </section>   
     </Fragment>
     </Router>
+    </Provider>
 );
 
 export default App;
