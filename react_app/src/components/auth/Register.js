@@ -1,6 +1,8 @@
+//Imports
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+//Signup function to accept the email,name and password data from the form
 const Register = () => {
     const [formData, setFormData] = useState({
         name:'',
@@ -22,6 +24,8 @@ const Register = () => {
     } 
 
     return (
+      //Create fragment element in order to return multiple elements
+      //Return the signup page
         <Fragment>
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>

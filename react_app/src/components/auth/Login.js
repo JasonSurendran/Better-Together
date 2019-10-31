@@ -1,13 +1,15 @@
+//Imports
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+//Login function to accept the email and password data from the form
 const Login = () => {
     const [formData, setFormData] = useState({
         email:'',
         password: ''
     });
 
-
+    //Setup username and password as the values for the form
     const { email, password } = formData;
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
     const onSubmit = async e=> { 
@@ -17,7 +19,9 @@ const Login = () => {
     } 
 
     return (
-        <Fragment>
+      //Create fragment element in order to return multiple elements
+      //Return the login page
+      <Fragment>
       <h1 className="large text-primary">Sign In</h1>
       <p className="lead"><i className="fas fa-user"></i> Sign Into Your Account</p>
       <form className="form" onSubmit={ e => onSubmit(e)} >
@@ -39,7 +43,7 @@ const Login = () => {
       <p className="my-1">
         Don't have an account? <Link to="/register">Sign Up</Link>
       </p>
-        </Fragment>
+      </Fragment>
     )
 }
 
