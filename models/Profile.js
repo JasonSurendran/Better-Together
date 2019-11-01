@@ -1,6 +1,7 @@
 //Import
 const mongoose = require('mongoose');
 
+
 //Setup Profie Components
 const ProfileSchema = new mongoose.Schema({
   user: {

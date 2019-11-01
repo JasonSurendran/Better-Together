@@ -1,6 +1,6 @@
 //Imports
-import mongoose from 'mongoose';
-import config from 'config';
+const mongoose = require('mongoose');
+const config  = require('config');
 
 //Connect to MongoDB
 const db = config.get('mongoURI');
