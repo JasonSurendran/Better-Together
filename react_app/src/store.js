@@ -6,15 +6,15 @@
     As your app grows more complex, you'll want to split your reducing function into separate functions, each managing independent parts of the state.*/
 
 //Imports
-import { createStore, applyMiddleWare } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
-const initalState = {};
-const applyMiddleWare = [thunk];
+const initialState = {};
+const middleware = [thunk];
 
 //Create Redux store
-const store = createtore(rootReducer, initialState, composeWithDevTools (applyMiddleWare(...middleware)));
+const store = createStore(rootReducer,initialState,composeWithDevTools(applyMiddleware(...middleware)));
 
 export default store;
