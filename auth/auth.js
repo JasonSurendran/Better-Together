@@ -1,6 +1,6 @@
 //Imports
-const jwt = require ('jsonwebtoken');
-const config = require('config');
+import jwt from 'jsonwebtoken';
+import config from 'config';
 
 //Export this as a async function
 module.exports = async function(req,res,next) {
