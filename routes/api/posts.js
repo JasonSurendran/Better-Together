@@ -5,8 +5,8 @@ const { check, validationResult } = require('express-validator');
 
 //Relative Imports
 const auth = require('../../auth/auth');
-const Post = require('../../models/Post');
-const User = require('../../models/User');
+const Post = require('../../mongodb_models/Post');
+const User = require('../../mongodb_models/User');
 
 //POST api/posts
 //Create a post

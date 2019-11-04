@@ -8,10 +8,10 @@ const { check,validationResult } = require('express-validator');
 
 //Relative Imports
 const auth = require('../../auth/auth')
-const User = require('../../models/User');
+const User = require('../../mongodb_models/User');
 
 //GET api/auth
-//Test route
+//Test route to verify it works
 router.get('/', auth, async (req, res) => {
     try {
       const user = await User.findById(req.user.id).select('-password');
@@ -24,7 +24,6 @@ router.get('/', auth, async (req, res) => {
   
   //POST api/auth
   //Authenticate user & get token
-
   router.post('/',
     //Ensure a valid email and password in inputted
     [

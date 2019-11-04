@@ -5,9 +5,9 @@ const { check, validationResult } = require('express-validator');
 
 //Relative Imports
 const auth = require('../../auth/auth');
-const Profile = require('../../models/Profile');
-const User = require('../../models/User');
-const Post = require('../../models/Post');
+const Profile = require('../../mongodb_models/Profile');
+const User = require('../../mongodb_models/User');
+const Post = require('../../mongodb_models/Post');
 
 //GET api/profile/me
 //Get current users profile
