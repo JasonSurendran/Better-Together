@@ -11,7 +11,7 @@ const Landing = () => {
         <div className="landing-inner">
           <h1 className="x-large">Better-Together</h1>
           <p className="lead">
-            Web application to connect the elderly members of the community in order to encourage doing activities together
+            Web application to connect the retired members of the community in order to encourage doing activities together
           </p>
           <div className="buttons">
             <Link to='/register' className = 'btn btn-primary'>
