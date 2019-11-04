@@ -1,5 +1,8 @@
+//Imports
 import React from 'react';
 import PropTypes from 'prop-types';
+
+//Connect Redux imports
 import { connect } from 'react-redux';
 
 const Alert = ({ alerts }) =>

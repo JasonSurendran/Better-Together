@@ -1,4 +1,7 @@
+//Imports
 import { SET_ALERT, REMOVE_ALERT } from '../actions/types'
+
+
 const initialState = [];
 
 //Add alert to state
