@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Landing = () => {
   //Return the landing page
     return (
-        <section className="landing">
+      <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
           <h1 className="x-large">Better-Together</h1>

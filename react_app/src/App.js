@@ -6,9 +6,10 @@ import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
-import './App.css';
 import { Provider } from 'react-redux';
 import store from './store';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Main app component
 //Main function to setup routes and import all other components 
