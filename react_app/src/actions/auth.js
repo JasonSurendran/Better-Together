@@ -1,9 +1,8 @@
 //Imports
 import axios from 'axios';
 import { setAlert } from './alert';
-import {REGISTER_SUCCESS,REGISTER_FAIL,USER_LOADED, AUTH_ERROR } from './types';
+import {REGISTER_SUCCESS,REGISTER_FAIL,LOGIN_SUCCESS,LOGIN_FAIL,USER_LOADED, AUTH_ERROR } from './types';
 import setAuthToken from '../utilities/setAuthToken';
-
 
 //Load User
 export const loadUser = () => async dispatch => {
@@ -27,6 +26,9 @@ export const loadUser = () => async dispatch => {
 }
 
 //Register User
+//Load user action which will take registered user token
+//It will then send a request to the api/auth route
+//Will then get the user detials and load them in
 export const register = ({ name, email, password }) => async dispatchEvent => {
     const config = {
         headers: {
@@ -44,6 +46,8 @@ export const register = ({ name, email, password }) => async dispatchEvent => {
             payload: res.data 
         })
 
+        
+    dispatch(loadUser());
     } catch (err) {
         const errors = err.response.data.errors;
 
@@ -55,6 +59,41 @@ export const register = ({ name, email, password }) => async dispatchEvent => {
 
         dispatchEvent({
             type: REGISTER_FAIL
+        })
+    }
+}
+
+
+//Login User
+export const login = (email, password) => async dispatchEvent => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    const body = JSON.stringify({ email, password });
+
+
+    try{
+        const res = await axios.post('/api/auth', body, config);
+        dispatchEvent({
+            type: LOGIN_SUCCESS,
+            //Payload is data you get back which in this case is a token
+            payload: res.data 
+        })
+
+        dispatch(loadUser());
+    } catch (err) {
+        const errors = err.response.data.errors;
+
+        //If numerous errors occur, dispay an error message for each error
+        if(errors){
+            errors.forEach(error => dispatchEvent(setAlert(error.msg, 'danger')));
+        }
+
+
+        dispatchEvent({
+            type: LOGIN_FAIL
         })
     }
 }
