@@ -2,15 +2,14 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
-
-//Connect redux imports
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
+import { register } from '../../actions/auth';
 
 
 //Signup function to accept the email,name and password data from the form
 //Destructure alert and pull it out of props
-const Register = ({setAlert}) => {
+const Register = ({setAlert, register}) => {
     const [formData, setFormData] = useState({
         name:'',
         email:'',
@@ -27,9 +26,9 @@ const Register = ({setAlert}) => {
             //Pass this as a message to the actions/alert, with type 'danger'
             setAlert('Passwords do not match', 'danger');
         } else {
-            console.log('SUCCESS')
+            register({ name, email, password});
         }
-    } 
+    }; 
 
     return (
       //Create fragment element in order to return multiple elements
@@ -77,10 +76,11 @@ const Register = ({setAlert}) => {
 
 
 Register.propTypes = {
-  setAlert: PropTypes.func.isRequired
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired
 }
 
 //Export connectwith setAlert in order to use it
 //Now its available within props
 //Use connect() in order to bring in the redux action
-export default connect(null, { setAlert })(Register);
+export default connect(null, { setAlert, register })(Register);
