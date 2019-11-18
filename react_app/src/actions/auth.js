@@ -1,7 +1,7 @@
 //Imports
 import axios from 'axios';
 import { setAlert } from './alert';
-import {REGISTER_SUCCESS,REGISTER_FAIL,LOGIN_SUCCESS,LOGIN_FAIL,USER_LOADED, AUTH_ERROR } from './types';
+import {REGISTER_SUCCESS,REGISTER_FAIL,LOGIN_SUCCESS,LOGIN_FAIL,USER_LOADED, AUTH_ERROR, LOGOUT } from './types';
 import setAuthToken from '../utilities/setAuthToken';
 
 //Load User
@@ -96,4 +96,10 @@ export const login = (email, password) => async dispatchEvent => {
             type: LOGIN_FAIL
         })
     }
+};
+
+//Logout
+//Clear Profile
+export const logout = () => dispatch => {
+    dispatch({ type: LOGOUT });
 }
