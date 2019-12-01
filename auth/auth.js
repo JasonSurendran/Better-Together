@@ -1,3 +1,10 @@
+//General Theory **************************************************************************************************
+//JWT is to cryptographically sign JSON data 
+//Ensures when a server receives a JWT, it can guarantee the data it contains can be trusted
+//Use with HTTPS requests
+//API authentication and server-to-server authorization
+//******************************************************************************************************************
+
 //Imports
 const jwt = require('jsonwebtoken');
 const config  = require('config');
@@ -10,7 +17,7 @@ const token = req.header('x-auth-token');
 
 //Check if not token
 if(!token) {
-  return res.status(401).json({ msg: 'No Token'});
+  return res.status(401).json({ msg: 'NO TOKEN'});
 }
 
 //Verify token
