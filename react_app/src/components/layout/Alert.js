@@ -25,4 +25,6 @@ const mapStateToProps = state => ({
     alerts: state.alert
 });
 
+//Now its available within props
+//Use connect() in order to bring in the redux action
 export default connect(mapStateToProps)(Alert);
