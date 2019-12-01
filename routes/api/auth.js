@@ -5,8 +5,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check,validationResult } = require('express-validator');
-
-//Relative Imports
 const auth = require('../../auth/auth')
 const User = require('../../mongodb_models/User');
 

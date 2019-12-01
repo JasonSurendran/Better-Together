@@ -1,7 +1,6 @@
 //Import
 const mongoose = require('mongoose');
 
-
 //Setup Profie Components
 const ProfileSchema = new mongoose.Schema({
   user: {
@@ -35,6 +34,7 @@ const ProfileSchema = new mongoose.Schema({
     }    
   },
 
+  //Add the date the profile is made
   date: {
     type: Date,
     default: Date.now

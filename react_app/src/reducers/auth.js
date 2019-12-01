@@ -6,7 +6,7 @@
     As your app grows more complex, you'll want to split your reducing function into separate functions, each managing independent parts of the state.*/
 
 //Imports
-import{REGISTER_SUCCESS,REGISTER_FAIL, LOGIN_SUCCESS,LOGIN_FAIL,  USER_LOADED, AUTH_ERROR, LOGOUT} from'../actions/types'
+import{REGISTER_SUCCESS,REGISTER_FAIL,LOGIN_SUCCESS,LOGIN_FAIL,USER_LOADED, AUTH_ERROR, LOGOUT,ACCOUNT_DELETED} from'../actions/types'
 
 //In Initial Auth State Set Parameters
 const initialstate = {
@@ -21,7 +21,6 @@ export default function(state = initialstate, action){
     
     switch(type){
 
-        //If registering user is a success
         case REGISTER_SUCCESS:
             localStorage.setItem('token', payload.token);
             return {
@@ -69,7 +68,15 @@ export default function(state = initialstate, action){
                 isAuthenticated: false,
                 loading: false
             }
-            case LOGOUT:
+        case LOGOUT:
+            localStorage.removeItem('token');
+            return{
+                ...state,
+                token: null,
+                isAuthenticated: false,
+                loading: false
+                }
+        case ACCOUNT_DELETED:
             localStorage.removeItem('token');
             return{
                 ...state,

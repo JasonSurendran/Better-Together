@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 //Setup components of a post
 const Schema = mongoose.Schema;
+
 const PostSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -19,15 +20,6 @@ const PostSchema = new Schema({
     type: String
   },
 
-  //Add number of likes the post gets
-  likes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
-      }
-    }
-  ],
 
   //Add number of comments
   comments: [

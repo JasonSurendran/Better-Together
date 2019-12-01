@@ -2,8 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-
-//Relative Imports
 const auth = require('../../auth/auth');
 const Profile = require('../../mongodb_models/Profile');
 const User = require('../../mongodb_models/User');
@@ -70,14 +68,14 @@ router.post(
       profileFields.interests = interests.split(',').map(skill => skill.trim());
     }
 
-    // Build social object
+    // Build social media object
     profileFields.social = {};
     if (twitter) profileFields.social.twitter = twitter;
     if (facebook) profileFields.social.facebook = facebook;
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      // Using upsert option (creates new doc if no match is found):
+      // Update details, or add them if they don't exist
       let profile = await Profile.findOneAndUpdate(
         { user: req.user.id },
         { $set: profileFields },
