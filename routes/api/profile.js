@@ -65,7 +65,7 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (interests) {
-      profileFields.interests = interests.split(',').map(skill => skill.trim());
+      profileFields.interests = interests.split(',').map(interest => interest.trim());
     }
 
     // Build social media object
