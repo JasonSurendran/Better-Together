@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 //Function for main landing page after login
-const Landing = () => {
+const Landing = ({ isAuthenticated }) => {
   //Return the landing page
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
     return (
       <section className="landing">
       <div className="dark-overlay">

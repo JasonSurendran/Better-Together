@@ -13,7 +13,6 @@ const CreateProfile = ({
 	history}) => {
 	const [formData, setFormData] = useState({
 		location: '',
-		status: '',
 		interests: '',
 		bio: '',
 		twitter: '',
@@ -23,7 +22,6 @@ const CreateProfile = ({
 	const [displaySocialInputs, toggleSocialInputs] = useState(false);
 	const {
 		location,
-		status,
 		interests,
 		bio,
 		twitter,

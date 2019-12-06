@@ -14,7 +14,6 @@ const EditProfile = ({
 }) => {
   const [formData, setFormData] = useState({
     location: '',
-    status: '',
     interests: '',
     bio: '',
     twitter: '',
@@ -29,17 +28,15 @@ const EditProfile = ({
 
     setFormData({
       location: loading || !profile.location ? '' : profile.location,
-      status: loading || !profile.status ? '' : profile.status,
       interests: loading || !profile.interests ? '' : profile.interests.join(','),
       bio: loading || !profile.bio ? '' : profile.bio,
       twitter: loading || !profile.social ? '' : profile.social.twitter,
       facebook: loading || !profile.social ? '' : profile.social.facebook,
       instagram: loading || !profile.social ? '' : profile.social.instagram
-    });}, [loading, getCurrentProfile]);
+    });}, [loading, profile.bio, profile.social, profile.interests, profile.location, getCurrentProfile]);
 
   const {
     location,
-    status,
     interests,
     bio,
     twitter,
@@ -78,9 +75,9 @@ const EditProfile = ({
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Skills'
-            name='skills'
-            value={skills}
+            placeholder='* Interests'
+            name='interests'
+            value={interests}
             onChange={e => onChange(e)}
           />
           <small className='form-text'>

@@ -6,7 +6,7 @@
     As your app grows more complex, you'll want to split your reducing function into separate functions, each managing independent parts of the state.*/
 
 //Imports
-import {GET_PROFILE,PROFILE_ERROR,CLEAR_PROFILE,UPDATE_PROFILE,GET_PROFILES} from '../actions/types';
+import {GET_PROFILE,PROFILE_ERROR,CLEAR_PROFILE,GET_PROFILES} from '../actions/types';
 
 const initialState = {
 	profile: null,
@@ -21,7 +21,6 @@ export default function(state = initialState, action) {
 
 	switch (type) {
 		case GET_PROFILE:
-		case UPDATE_PROFILE:
 			return {
 				...state,
 				profile: payload,

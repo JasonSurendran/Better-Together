@@ -10,9 +10,6 @@ const ProfileSchema = new mongoose.Schema({
   location: {
     type: String
   },
-  status: {
-    type: String,
-  },
   interests: {
     type: [String],
     required: true
