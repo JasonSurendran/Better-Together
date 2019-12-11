@@ -5,7 +5,6 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Routes from './components/routing/Routes';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Redux Imports
 import { Provider } from 'react-redux';
