@@ -4,10 +4,9 @@
   "description": "Community Connecter",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
     "app": "nodemon app",
     "react_app": "npm start --prefix react_app",
-    "concurrent": "concurrently \"npm run app\" \"npm run react_app\""
+    "Better-Together": "concurrently \"npm run app\" \"npm run react_app\""
   },
   "repository": {
     "type": "git",
