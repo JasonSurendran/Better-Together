@@ -8,6 +8,6 @@ A Full-Stack application that connects the retired members of the community in o
 
 ## Running 
 
-1. To download Back-end Requirementsrun ```npm install``` 
+1. To download Back-end Requirements run ```npm install``` 
 2. To download Front-end Requirements run ```cd react_app``` and then ```npm install```
-3. Navigate back to root of project and run ```npm run Better-Together```
+3. To run the project navigate back to root of project and run ```npm run Better-Together```
