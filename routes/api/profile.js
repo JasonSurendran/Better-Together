@@ -32,14 +32,8 @@ router.get('/me', auth, async (req, res) => {
 router.post(
   '/',
   [
-    auth,
     [
-      check('status', 'Status is required')
-        .not()
-        .isEmpty(),
-      check('skills', 'Skills is required')
-        .not()
-        .isEmpty()
+      auth
     ]
   ],
   async (req, res) => {
